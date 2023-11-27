@@ -1,0 +1,6 @@
+# vars.yml
+do_api_token: 'do-toke-here'
+
+mysql_pw: 'P@ssw0rd'
+db_name: 'mailgw'
+db_user: 'mailgw'
