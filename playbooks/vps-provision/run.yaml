@@ -4,6 +4,8 @@
   gather_facts: no
   vars_files:
       - vars.yaml
+  vars:
+      do_api_token: "{{ lookup('ansible.builtin.env', 'DO_TOKEN') }}"
   tasks:
       - name: Create a DO Droplet
         community.digitalocean.digital_ocean_droplet:
@@ -53,51 +55,3 @@
         become: yes
         become_user: root
         become_method: sudo
-
-      - name: bashrc
-        template:
-            src: ../templates/bashrc.sh
-            dest: /root/.bashrc
-            owner: root
-            group: root
-            mode: '0644'
-
-      - name: bashrc-skel
-        template:
-            src: ../templates/bashrc.sh
-            dest: /etc/skel/.bashrc
-            owner: root
-            group: root
-            mode: '0644'
-
-      - name: env file
-        template:
-            src: ../templates/.env
-            dest: /opt/.env
-            owner: root
-            group: root
-            mode: '0644'
-
-      - name: Add Docker’s official GPG key
-        apt_key:
-            url: https://download.docker.com/linux/ubuntu/gpg
-            state: present
-
-      - name: Add Docker repository
-        apt_repository:
-            repo: deb [arch=amd64] https://download.docker.com/linux/ubuntu {{ ansible_distribution_release }} stable
-            state: present
-
-      #   - name: Update apt package index
-      #     apt:
-      #         update_cache: yes
-
-      - name: Install Docker CE
-        apt:
-            name: docker-ce
-            state: present
-
-      - name: Pull mysql Docker image
-        docker_image:
-            name: mysql
-            source: pull

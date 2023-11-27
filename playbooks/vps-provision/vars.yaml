@@ -1,4 +1,2 @@
-# vars.yml
-do_api_token: 'do-token-here'
 vpc: 'd02044c0-1c69-4da7-ad45-27fe9a2ceaf6'
 ssh_key: 37590350
