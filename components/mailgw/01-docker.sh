@@ -1,14 +1,6 @@
 ### Install Docker
-sudo apt-get update
-sudo apt-get install -y apt-transport-https ca-certificates curl gnupg2 software-properties-common
 
-sudo mv /usr/share/keyrings/docker-archive-keyring.gpg .
-curl -fsSL https://download.docker.com/linux/ubuntu/gpg | sudo gpg --dearmor -o /usr/share/keyrings/docker-archive-keyring.gpg
-
-echo yes | sudo add-apt-repository "deb [arch=amd64] https://download.docker.com/linux/ubuntu $(lsb_release -cs) stable"
-
-sudo apt-get update
-sudo apt-get install -y docker-ce
+sudo apt-get install docker.io
 sudo docker --version
 
 sudo usermod -aG docker $USER

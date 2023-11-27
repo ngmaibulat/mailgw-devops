@@ -19,7 +19,13 @@ docker stop logservice
 docker rm logservice
 
 ### Run new logservice container
-docker run -d --network=$dbname --env-file /opt/.env -p 3000:$port --name logservice ngmaibulat/logservice:latest
+docker run
+        --name logservice \
+        --restart=unless-stopped \
+        --network=$dbname \
+        --env-file /opt/.env \
+        -p 3000:3000 \
+        -d ngmaibulat/logservice:latest
 
 ### Test
 curl -X POST -H "Content-Type: application/json" -d @samples/connection/conn.json http://localhost:3000/api/connection

@@ -1,6 +1,4 @@
 # vars.yml
-do_api_token: 'do-toke-here'
-
-mysql_pw: 'P@ssw0rd'
-db_name: 'mailgw'
-db_user: 'mailgw'
+do_api_token: 'do-token-here'
+vpc: 'd02044c0-1c69-4da7-ad45-27fe9a2ceaf6'
+ssh_key: 37590350

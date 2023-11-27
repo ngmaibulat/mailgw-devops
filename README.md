@@ -1,25 +1,13 @@
-### Mailgw Scripts
+### Prerequisites
 
-```bash
-mkdir -p /opt/mailgw
-```
-
-### Env File: /opt/.env
-
-```bash
-NODE_ENV=production
-PORT=3000
-
-DB_DRIVER=mysql
-DB_HOST=localhost
-DB_NAME=mailgw
-DB_USER=root
-DB_PASS=P@ssw0rd
-```
-
-### Load Env File in Bash
-
-```bash
-source /opt/.env
-echo $DB_DRIVER
-```
+-   Install latest Ubuntu Server LTS
+-   Install packages:
+    -   docker.io
+    -   swaks
+    -   vim
+    -   tcpdump
+-   Pull containers
+-   Allow 25/tcp and 2525/tcp from approved senders
+-   Create directories: /opt/mailgw/config, /opt/mailgw/queue, /opt/mailgw/logs
+-   Use `--restart=unless-stopped` on all containers
+-   Use `--network=host` on mailgw

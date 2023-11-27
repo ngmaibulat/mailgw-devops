@@ -28,7 +28,9 @@ docker network create --driver bridge --subnet 10.0.0.0/24 mailgw
 docker volume create data
 
 ### Run containers
-docker run --name db \
+docker run
+        --name db \
+        --restart=unless-stopped \
         --network $dbname \
         -p 3306:3306 \
         -v data:/var/lib/mysql \
@@ -42,4 +44,10 @@ sleep 60
 
 docker run -it --rm --network=$dbname --env-file /opt/.env ngmaibulat/db-migrator:latest
 
-docker run -d --network=$dbname --env-file /opt/.env -p 3000:3000 --name logservice ngmaibulat/logservice:latest
+docker run
+        --name logservice \
+        --restart=unless-stopped \
+        --network=$dbname \
+        --env-file /opt/.env \
+        -p 3000:3000 \
+        -d ngmaibulat/logservice:latest
