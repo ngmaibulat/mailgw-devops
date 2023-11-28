@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   db:
+    container_name: db
     image: mysql:latest
     restart: unless-stopped
     networks:
@@ -17,6 +18,7 @@ services:
       MYSQL_DATABASE: ${DB_NAME}
 
   logservice:
+    container_name: logservice
     image: ngmaibulat/logservice:latest
     restart: unless-stopped
     networks:
@@ -32,6 +34,7 @@ services:
 
 networks:
   mailgw:
+    name: mailgw
     driver: bridge
 
 volumes:

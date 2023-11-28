@@ -2,9 +2,8 @@ version: '3.8'
 
 services:
   db-migrator:
+    container_name: db-migrator
     image: ngmaibulat/db-migrator:latest
-    depends_on:
-      - db
     networks:
       - mailgw
     environment:
