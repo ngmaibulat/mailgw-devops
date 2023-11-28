@@ -63,3 +63,4 @@
 -   C++ based MySQL, PostgreSQL client
 -   C++ based tcping
 -   C++ based Sigma rules Processor
+-   TLS info. Based on sslscan.sh features. JSON output

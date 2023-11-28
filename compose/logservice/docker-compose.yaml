@@ -16,19 +16,6 @@ services:
       MYSQL_ROOT_PASSWORD: ${DB_PASS}
       MYSQL_DATABASE: ${DB_NAME}
 
-  db-migrator:
-    image: ngmaibulat/db-migrator:latest
-    depends_on:
-      - db
-    networks:
-      - mailgw
-    environment:
-      DB_DRIVER: ${DB_DRIVER}
-      DB_HOST: ${DB_HOST}
-      DB_NAME: ${DB_NAME}
-      DB_USER: ${DB_USER}
-      DB_PASS: ${DB_PASS}
-
   logservice:
     image: ngmaibulat/logservice:latest
     restart: unless-stopped
