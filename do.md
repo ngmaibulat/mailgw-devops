@@ -1,16 +1,23 @@
 ### Ansible
 
 -   config fw rules via Ansible
--   deploy mailhog
--   deploy sample configs, pointing to local mailhog
--   deploy mailgw
 -   deploy Prometheus/Grafana/Node Exporter
 
 ### Scripts
 
--   git clone settings/mine
 -   test scripts - must be equivalent to Ansible
--   docker compose
+
+### Docker Compose
+
+-   DB + LogService
+-   Migrations
+-   Mailgw + Mailhog
+
+### Ansible Mailgw
+
+-   Mailhog
+-   Configs: sample configs pointing to local mailhog
+-   Mailgw
 
 ### Customer Control Machine
 
@@ -27,6 +34,19 @@
 -   deploy
 -   tls certs
 -   nginx
+
+### Adv
+
+-   Alpine host
+-   Sysmon listener
+-   FP Cloud Logs
+-   Logs from Windows DNS Server
+-   Prisma ORM
+-   Typescript
+-   TimescaleDB
+-   Push TLS certs via ssh
+-   sslscan.sh
+-   Secure Delivery Portal
 
 ### Additional Stuff
 

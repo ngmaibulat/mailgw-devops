@@ -1,5 +1,6 @@
 .env
 inventory.txt
+.DS_Store
 
 # Logs
 logs

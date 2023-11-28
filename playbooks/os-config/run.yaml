@@ -5,7 +5,7 @@
   tasks:
       - name: Install packages
         apt:
-            name: docker.io, tcpdump, vim, htop, cifs-utils, nala, git, python-is-python3, python3-pip, python3-pymysql, curl, mysql-client, ca-certificates, apt-transport-https, software-properties-common
+            name: docker.io, docker-compose, tcpdump, vim, htop, cifs-utils, nala, git, python-is-python3, python3-pip, python3-pymysql, curl, mysql-client, ca-certificates, apt-transport-https, software-properties-common
             state: present
         become: yes
         become_user: root
