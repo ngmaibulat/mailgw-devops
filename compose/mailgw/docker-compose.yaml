@@ -2,6 +2,7 @@ version: '3.8'
 
 services:
   mailhog:
+    container_name: mailhog
     image: mailhog/mailhog
     ports:
       - "8025:8025" # MailHog web interface
